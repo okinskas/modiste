@@ -28,7 +28,8 @@ add_executable(modiste_test source/modiste_test.cpp)
 target_link_libraries(
     modiste_test PRIVATE
     modiste::modiste
-    GTest::gtest_main 
+    GTest::gmock
+    GTest::gtest_main
 )
 target_compile_features(modiste_test PRIVATE cxx_std_20)
 
