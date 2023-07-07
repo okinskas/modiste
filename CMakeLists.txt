@@ -5,8 +5,8 @@ include(cmake/prelude.cmake)
 project(
     modiste
     VERSION 0.1.0
-    DESCRIPTION "Short description"
-    HOMEPAGE_URL "https://example.com/"
+    DESCRIPTION "C++ template library for handling structured data across specialised and distributed systems."
+    HOMEPAGE_URL "https://github.com/okinskas/modiste"
     LANGUAGES NONE
 )
 
@@ -29,7 +29,7 @@ target_include_directories(
     "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>"
 )
 
-target_compile_features(modiste_modiste INTERFACE cxx_std_17)
+target_compile_features(modiste_modiste INTERFACE cxx_std_20)
 
 find_package(fmt REQUIRED)
 target_link_libraries(modiste_modiste INTERFACE fmt::fmt)

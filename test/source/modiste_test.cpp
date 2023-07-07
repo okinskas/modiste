@@ -1,8 +1,9 @@
 #include "modiste/modiste.hpp"
 
-#include <catch2/catch_test_macros.hpp>
+// #include <catch2/catch_test_macros.hpp>
+#include <gtest/gtest.h>
 
-TEST_CASE("Name is modiste", "[library]")
+TEST(DefaultTest, nameIsCorrect)
 {
-  REQUIRE(name() == "modiste");
+  ASSERT_EQ(name(), "modiste");
 }
