@@ -22,3 +22,10 @@ TEST(DefaultTest, messageHasMetadata)
       std::is_base_of_v<example::Metadata, modiste::metadata<example::Default>>;
   ASSERT_TRUE(is_metadata);
 }
+
+TEST(DefaultTest, messageHasMetadataVersion)
+{
+  const auto is_version =
+      std::is_base_of_v<std::string, modiste::version<example::Default>>;
+  ASSERT_TRUE(is_version);
+}
