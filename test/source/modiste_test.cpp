@@ -1,3 +1,5 @@
+#include <type_traits>
+
 #include "modiste/modiste.hpp"
 
 #include <gmock/gmock.h>
@@ -12,4 +14,11 @@ TEST(DefaultTest, nameIsCorrect)
 TEST(DefaultTest, typeIsProtobufMessage)
 {
   ASSERT_TRUE(modiste::IsProtobuf<example::Default>);
+}
+
+TEST(DefaultTest, messageHasMetadata)
+{
+  const auto is_metadata =
+      std::is_base_of_v<example::Metadata, modiste::metadata<example::Default>>;
+  ASSERT_TRUE(is_metadata);
 }

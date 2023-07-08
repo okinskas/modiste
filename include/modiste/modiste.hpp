@@ -20,4 +20,7 @@ namespace modiste
 template<typename T>
 concept IsProtobuf = std::is_base_of_v<google::protobuf::Message, T>;
 
+template<typename T>
+using metadata = std::decay_t<decltype(std::declval<T>().metadata())>;
+
 }  // namespace modiste
