@@ -26,4 +26,7 @@ using metadata = std::decay_t<decltype(std::declval<T>().metadata())>;
 template<typename T>
 using version = std::decay_t<decltype(std::declval<metadata<T>>().version())>;
 
+template<typename T>
+using data = std::decay_t<decltype(std::declval<T>().data())>;
+
 }  // namespace modiste
