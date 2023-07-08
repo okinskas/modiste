@@ -31,8 +31,17 @@ target_include_directories(
 
 target_compile_features(modiste_modiste INTERFACE cxx_std_20)
 
+# ---- Depedencies ----
+
 find_package(fmt REQUIRED)
-target_link_libraries(modiste_modiste INTERFACE fmt::fmt)
+find_package(Protobuf REQUIRED)
+
+# ---- Link ----
+
+target_link_libraries(modiste_modiste INTERFACE
+  fmt::fmt
+  protobuf::libprotobuf
+)
 
 # ---- Install rules ----
 

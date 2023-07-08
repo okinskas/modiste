@@ -10,6 +10,7 @@ class Recipe(ConanFile):
 
     def requirements(self):
         self.requires("fmt/10.0.0")
+        self.requires("protobuf/3.21.9")
 
     def build_requirements(self):
         pass

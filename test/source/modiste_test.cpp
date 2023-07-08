@@ -2,6 +2,7 @@
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
+#include <proto/default.pb.h>
 
 TEST(DefaultTest, nameIsCorrect)
 {

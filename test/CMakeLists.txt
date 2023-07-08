@@ -22,14 +22,26 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
+find_package(Protobuf REQUIRED)
+
+include_directories(${PROTOBUF_INCLUDE_DIRS})
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
+protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS proto/default.proto)
+
 # ---- Tests ----
 
-add_executable(modiste_test source/modiste_test.cpp)
+add_executable(modiste_test
+  source/modiste_test.cpp
+  ${PROTO_SRCS} ${PROTO_HDRS} 
+)
+
 target_link_libraries(
     modiste_test PRIVATE
     modiste::modiste
     GTest::gmock
     GTest::gtest_main
+    protobuf::libprotobuf
+    ${PROTOBUF_LIBRARIES}
 )
 target_compile_features(modiste_test PRIVATE cxx_std_20)
 

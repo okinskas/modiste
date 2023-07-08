@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message Metadata {
+  string version = 1;
+}
+
+message Data {
+  string id = 1;
+  string author = 2;
+}
+
+message Default {
+  Metadata metadata = 1;
+  Data data = 2;
+}
+
