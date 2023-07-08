@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package example;
+
 message Metadata {
   string version = 1;
 }

@@ -8,3 +8,8 @@ TEST(DefaultTest, nameIsCorrect)
 {
   ASSERT_EQ(name(), "modiste");
 }
+
+TEST(DefaultTest, typeIsProtobufMessage)
+{
+  ASSERT_TRUE(modiste::IsProtobuf<example::Default>);
+}
