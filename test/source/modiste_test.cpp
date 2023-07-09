@@ -36,3 +36,13 @@ TEST(DefaultTest, isModisteConforming)
 {
   ASSERT_TRUE(modiste::IsModisteConforming<example::Default>);
 }
+
+TEST(DefaultTest, isNotModisteConforming)
+{
+  struct non_conforming
+  {
+    auto metadata() -> const std::string&;
+  };
+
+  ASSERT_FALSE(modiste::IsModisteConforming<non_conforming>);
+}
