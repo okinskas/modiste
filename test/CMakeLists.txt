@@ -32,6 +32,7 @@ protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS proto/default.proto)
 
 add_executable(modiste_test
   source/modiste_test.cpp
+  source/queue_test.cpp
   ${PROTO_SRCS} ${PROTO_HDRS} 
 )
 
