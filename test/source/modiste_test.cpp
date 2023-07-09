@@ -36,3 +36,8 @@ TEST(DefaultTest, messageHasData)
       std::is_base_of_v<example::Data, modiste::data<example::Default>>;
   ASSERT_TRUE(is_data);
 }
+
+TEST(DefaultTest, isModisteConforming)
+{
+  ASSERT_TRUE(modiste::IsModisteConforming<example::Default>);
+}
