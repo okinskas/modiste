@@ -35,12 +35,14 @@ target_compile_features(modiste_modiste INTERFACE cxx_std_20)
 
 find_package(fmt REQUIRED)
 find_package(Protobuf REQUIRED)
+find_package(Boost 1.82.0 REQUIRED)
 
 # ---- Link ----
 
 target_link_libraries(modiste_modiste INTERFACE
   fmt::fmt
   protobuf::libprotobuf
+  Boost::boost
 )
 
 # ---- Install rules ----

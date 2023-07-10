@@ -8,5 +8,7 @@
 
 TEST(QueueTest, canUseWithDefaults)
 {
+  modiste::queue<example::Default> queue;
+
   ASSERT_TRUE(true);
 }
